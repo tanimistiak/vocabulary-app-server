@@ -2,12 +2,24 @@ const mongoose = require("mongoose");
 
 const vocabularySchema = new mongoose.Schema(
   {
-    lessonName: {
+    word: {
       type: String,
       required: true,
     },
-    lessonNumber: {
+    pronunciation: {
+      type: String,
+      required: true,
+    },
+    when: {
+      type: String,
+      required: true,
+    },
+    lesson: {
       type: Number,
+      required: true,
+    },
+    adminEmail: {
+      type: String,
       required: true,
     },
     createdAt: {
