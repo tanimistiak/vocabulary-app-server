@@ -10,6 +10,7 @@ const { loginRouter } = require("./routes/login.routes");
 const { meRouter } = require("./routes/me.routes");
 const { adminRouter } = require("./routes/admin.routes");
 const { userRouter } = require("./routes/user.routes");
+const { logoutRouter } = require("./routes/logout.routes");
 // env variable
 dotenv.config();
 //middlewares
@@ -33,6 +34,7 @@ app.use("/api", loginRouter);
 app.use("/api", meRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/user", userRouter);
+app.use("/api", logoutRouter);
 //global route
 app.get("/", (req, res, next) => {
   res.send("Hola Japan");
