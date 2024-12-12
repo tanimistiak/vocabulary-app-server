@@ -17,12 +17,12 @@ exports.getVocabulary = async (req, res, next) => {
       finalArray.push(newFormedLession);
     }
     res.status(201).json({
-      message: "Vocabulary found",
+      message: "lesson found",
       lesson: finalArray,
     });
   } catch (error) {
     res
       .status(500)
-      .json({ message: "Error creating vocabulary", error: error.message });
+      .json({ message: "Error finding lesson", error: error.message });
   }
 };
