@@ -11,6 +11,7 @@ const { deleteLesson } = require("../services/admin/deleteLesson");
 const { getAllVocabulary } = require("../services/admin/getAllVocabulary");
 const { updateVocabulary } = require("../services/admin/updateVocabulary");
 const { deleteVocabulary } = require("../services/admin/deleteVocabulary");
+const { getUsers } = require("../services/admin/getUsers");
 const router = express.Router();
 router.route("/add-lesson").post(authenticate, authorize("admin"), addLesson);
 router
@@ -34,4 +35,5 @@ router
 router
   .route("/delete-vocabulary")
   .post(authenticate, authorize("admin"), deleteVocabulary);
+router.route("/get-users").get(authenticate, authorize("admin"), getUsers);
 exports.adminRouter = router;
