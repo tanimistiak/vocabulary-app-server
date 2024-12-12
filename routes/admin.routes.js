@@ -10,6 +10,7 @@ const { updateLesson } = require("../services/admin/updateLesson");
 const { deleteLesson } = require("../services/admin/deleteLesson");
 const { getAllVocabulary } = require("../services/admin/getAllVocabulary");
 const { updateVocabulary } = require("../services/admin/updateVocabulary");
+const { deleteVocabulary } = require("../services/admin/deleteVocabulary");
 const router = express.Router();
 router.route("/add-lesson").post(authenticate, authorize("admin"), addLesson);
 router
@@ -30,4 +31,7 @@ router
 router
   .route("/update-vocabulary")
   .put(authenticate, authorize("admin"), updateVocabulary);
+router
+  .route("/delete-vocabulary")
+  .post(authenticate, authorize("admin"), deleteVocabulary);
 exports.adminRouter = router;
