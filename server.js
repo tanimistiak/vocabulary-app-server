@@ -12,7 +12,9 @@ const { adminRouter } = require("./routes/admin.routes");
 const { userRouter } = require("./routes/user.routes");
 const { logoutRouter } = require("./routes/logout.routes");
 // env variable
-dotenv.config();
+require("dotenv").config({
+  path: [".env.local", ".env"],
+});
 //middlewares
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
