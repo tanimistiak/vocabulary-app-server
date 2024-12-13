@@ -18,7 +18,7 @@ require("dotenv").config({
 //middlewares
 app.use(
   cors({
-    origin: "https://vocabulary-app-client.onrender.com/",
+    origin: "https://vocabulary-app-client.onrender.com",
     credentials: true,
   })
 );
