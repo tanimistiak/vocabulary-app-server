@@ -16,7 +16,12 @@ require("dotenv").config({
   path: [".env.local", ".env"],
 });
 //middlewares
-app.use(cors({ origin: true, credentials: true }));
+app.use(
+  cors({
+    origin: "https://vocabulary-app-client.onrender.com/",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 
