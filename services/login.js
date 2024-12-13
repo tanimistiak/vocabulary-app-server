@@ -1,11 +1,11 @@
 const admin = require("firebase-admin");
 exports.login = async (req, res, next) => {
   const { idToken } = req.body;
-  console.log(idToken);
+  // console.log(idToken);
   try {
     const decodedToken = await admin.auth().verifyIdToken(idToken);
     const user = await admin.auth().getUser(decodedToken.uid);
-
+    console.log(user);
     const role = user.customClaims?.role || "user";
     const authToken = idToken;
 
@@ -18,6 +18,7 @@ exports.login = async (req, res, next) => {
 
     res.status(200).json({ message: "Login successful", role });
   } catch (error) {
+    console.log(error);
     res.status(401).json({ error: "Authentication failed" });
   }
 };
