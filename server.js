@@ -32,7 +32,7 @@ admin.initializeApp({
 // connect to db
 connectToDatabase();
 //routes
-
+// just change vercel commit
 app.use("/api", registerRouter);
 app.use("/api", loginRouter);
 app.use("/api", meRouter);
