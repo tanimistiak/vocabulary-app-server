@@ -27,8 +27,8 @@ app.use(cookieParser());
 
 // firebase admin
 //
-const serviceAccount = require("./firebase-service-key.json");
-// const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
+// const serviceAccount = require("./firebase-service-key.json");
+const serviceAccount = JSON.parse(process.env.KEY);
 
 try {
   admin.initializeApp({
