@@ -1,7 +1,7 @@
 const admin = require("firebase-admin");
 exports.login = async (req, res, next) => {
   const { idToken } = req.body;
-
+  console.log(idToken);
   try {
     const decodedToken = await admin.auth().verifyIdToken(idToken);
     const user = await admin.auth().getUser(decodedToken.uid);
